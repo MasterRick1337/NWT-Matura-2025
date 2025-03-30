@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Routing/static Routing/Config.md",
+                "file": "WLAN/Standards/Config.md",
                 "mode": "source",
                 "source": false
               },
@@ -170,8 +170,17 @@
   },
   "active": "02c359ee7f02ebd8",
   "lastOpenFiles": [
-    "Routing/static Routing/Theorie.md",
+    "WLAN/Capsman/Config.md",
+    "WLAN/Capsman/Theorie.md",
+    "WLAN/Standards/Theorie.md",
+    "WLAN/Standards/Config.md",
     "Routing/static Routing/Config.md",
+    "Images/Pasted image 20250330161204.png",
+    "Capsman.md",
+    "WLAN/Capsman",
+    "WLAN/Standards.md",
+    "WLAN/Standards",
+    "Routing/static Routing/Theorie.md",
     "Images/SR1.png",
     "Routing/BGP/Theorie.md",
     "Routing/BGP/Config.md",
