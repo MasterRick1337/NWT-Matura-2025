@@ -1,7 +1,8 @@
 ```
-#create a security profile
+ # Access Point Erstellen
+ 
 /interface wifi security
-add authentication-types=wpa3-psk name=sec1 passphrase=HaveAg00dDay
+add name=sec1 authentication-types=wpa3-psk passphrase=HaveAg00dDay
 
 #create configuraiton profiles to use for provisioning
 /interface wifi configuration

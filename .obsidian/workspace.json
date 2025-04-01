@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "WLAN/Standards/Config.md",
+                "file": "Switching/VLANs/Theorie.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Config"
+              "title": "Theorie"
             }
           }
         ]
@@ -170,7 +170,14 @@
   },
   "active": "02c359ee7f02ebd8",
   "lastOpenFiles": [
+    "Switching/VLANs/Config.md",
+    "Switching/STP/Theorie.md",
+    "Switching/VLANs/Theorie.md",
+    "Switching/STP",
+    "Images/vlanConf.png",
+    "Images/Vlan_header.jpg",
     "WLAN/Capsman/Config.md",
+    "Switching/VLANs",
     "WLAN/Capsman/Theorie.md",
     "WLAN/Standards/Theorie.md",
     "WLAN/Standards/Config.md",
