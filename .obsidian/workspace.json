@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Switching/VLANs/Theorie.md",
+                "file": "VPN/WireGuard/Config.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Theorie"
+              "title": "Config"
             }
           }
         ]
@@ -168,11 +168,26 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "02c359ee7f02ebd8",
+  "active": "f7969ccffa87623d",
   "lastOpenFiles": [
-    "Switching/VLANs/Config.md",
+    "Images/wireguardS2S.png",
+    "VPN/WireGuard/Theorie.md",
+    "VPN/WireGuard/Config.md",
+    "VPN/OpenVPN/Config.md",
+    "Images/ovpn_site2site.png",
+    "VPN/OpenVPN/Theorie.md",
+    "Images/openvpn.png",
+    "Images/site2siteExample.drawio.png",
+    "VPN/IPSEC-L2TP/Config.md",
+    "VPN/IPSEC-L2TP/Theorie.md",
+    "Images/site2site.drawio.png",
+    "Images/roadwarrior.drawio.png",
     "Switching/STP/Theorie.md",
     "Switching/VLANs/Theorie.md",
+    "VPN/WireGuard",
+    "VPN/OpenVPN",
+    "VPN/IPSEC-L2TP",
+    "Switching/VLANs/Config.md",
     "Switching/STP",
     "Images/vlanConf.png",
     "Images/Vlan_header.jpg",
@@ -193,9 +208,6 @@
     "Routing/BGP/Config.md",
     "Routing/OSPF/Config.md",
     "Images/Untitled-1.png",
-    "Images/Untitled.png",
-    "Images/Untitled 1.png",
-    "Images/Untitled.png",
     "Routing/OSPF/Theorie.md",
     "Adressierungen/Addressumrechnung",
     "Images"
