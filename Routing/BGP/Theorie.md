@@ -1,6 +1,6 @@
 BGP ist das **wichtigste Routing-Protokoll für das Internet** und gehört zur **Klasse der Path-Vector-Protokolle**. Es unterscheidet sich stark von OSPF oder RIP, da es nicht für interne Netzwerke (IGPs), sondern für das **Routing zwischen autonomen Systemen (AS)** genutzt wird.
 
-Automated Systems: Automated Systems sind **Systeme, die Aufgaben ohne oder mit minimalem menschlichem Eingriff ausführen**. Sie nutzen **Software, Sensoren, Algorithmen und Maschinen**, um Prozesse zu steuern.
+Ein **Autonomes System (AS)** ist ein unabhängig verwaltetes Netzwerk oder eine Gruppe von Netzwerken mit einer eigenen Routing-Politik, das über eine eindeutige AS-Nummer (ASN) identifiziert wird und mithilfe von BGP mit anderen AS kommuniziert, um den globalen Internetverkehr zu steuern.
 
 ### BGP-Typen: iBGP & BGP
 | BGP-Typ             | Einsatzbereich                                 | Hop-Limit           | Best Path Selection                     |

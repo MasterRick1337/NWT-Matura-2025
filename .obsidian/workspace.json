@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "VPN/WireGuard/Config.md",
+                "file": "Routing/BGP/Theorie.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Config"
+              "title": "Theorie"
             }
           }
         ]
@@ -168,11 +168,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "f7969ccffa87623d",
+  "active": "02c359ee7f02ebd8",
   "lastOpenFiles": [
+    "Routing/BGP/Config.md",
+    "VPN/WireGuard/Config.md",
     "Images/wireguardS2S.png",
     "VPN/WireGuard/Theorie.md",
-    "VPN/WireGuard/Config.md",
     "VPN/OpenVPN/Config.md",
     "Images/ovpn_site2site.png",
     "VPN/OpenVPN/Theorie.md",
@@ -205,9 +206,7 @@
     "Routing/static Routing/Theorie.md",
     "Images/SR1.png",
     "Routing/BGP/Theorie.md",
-    "Routing/BGP/Config.md",
     "Routing/OSPF/Config.md",
-    "Images/Untitled-1.png",
     "Routing/OSPF/Theorie.md",
     "Adressierungen/Addressumrechnung",
     "Images"
