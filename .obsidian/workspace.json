@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Routing/BGP/Theorie.md",
+                "file": "Routing/OSPF/Theorie.md",
                 "mode": "source",
                 "source": false
               },
@@ -170,7 +170,11 @@
   },
   "active": "02c359ee7f02ebd8",
   "lastOpenFiles": [
+    "Routing/BGP/Theorie.md",
     "Routing/BGP/Config.md",
+    "Routing/static Routing/Config.md",
+    "Routing/OSPF/Config.md",
+    "Routing/OSPF/Theorie.md",
     "VPN/WireGuard/Config.md",
     "Images/wireguardS2S.png",
     "VPN/WireGuard/Theorie.md",
@@ -197,7 +201,6 @@
     "WLAN/Capsman/Theorie.md",
     "WLAN/Standards/Theorie.md",
     "WLAN/Standards/Config.md",
-    "Routing/static Routing/Config.md",
     "Images/Pasted image 20250330161204.png",
     "Capsman.md",
     "WLAN/Capsman",
@@ -205,9 +208,6 @@
     "WLAN/Standards",
     "Routing/static Routing/Theorie.md",
     "Images/SR1.png",
-    "Routing/BGP/Theorie.md",
-    "Routing/OSPF/Config.md",
-    "Routing/OSPF/Theorie.md",
     "Adressierungen/Addressumrechnung",
     "Images"
   ]

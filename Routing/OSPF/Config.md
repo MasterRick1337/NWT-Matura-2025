@@ -19,4 +19,4 @@ add disabled=no instance=OSPFInst1 name=backbone
 add area=backbone cost=15 disabled=no interfaces=ether1 
 add area=backbone cost=15 disabled=no interfaces=ether2
 ```
-Hier sind alle Router in der Backbone-Area (Area-0) da sie alle wichtig sind.
+Hier sind alle Router in der Backbone-Area (Area-0) da sie alle wichtig sind (eine Verbindung zu einem PC/Internet haben).

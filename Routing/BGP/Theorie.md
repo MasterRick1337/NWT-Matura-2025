@@ -11,7 +11,7 @@ Ein **Autonomes System (AS)** ist ein unabhängig verwaltetes Netzwerk oder eine
 - Wird zwischen **verschiedenen AS** verwendet.
 - Nutzt **AS-Path** als wichtigstes Attribut für die Routenwahl.
 - Hat standardmäßig ein **TTL (Time-to-Live) von 1**, was bedeutet, dass die Nachbarn **direkt verbunden** sein müssen (kann mit `ebgp-multihop` erweitert werden).
-### BGP (Internal BGP)
+### iBGP (Internal BGP)
 - Wird **innerhalb desselben AS** verwendet.
 - Funktioniert **nicht automatisch wie OSPF**, weil iBGP **kein Routing innerhalb des AS übernimmt**.
 - iBGP-Router müssen **vollständig vermascht (Full-Mesh)** sein oder Route Reflectors (RR) nutzen.
