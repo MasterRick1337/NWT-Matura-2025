@@ -1,4 +1,4 @@
-![[Images/wireguardS2S.png]]
+![](Images/wireguardS2S.png)
 
 **Router West**
 ```

@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "WLAN/Capsman/Theorie.md",
+                "file": "Switching/STP/Theorie.md",
                 "mode": "source",
                 "source": false
               },
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Routing/static Routing/Config.md",
+                "file": "Switching/STP/Theorie.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Config"
+              "title": "Backlinks for Theorie"
             }
           },
           {
@@ -155,8 +155,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -170,9 +169,10 @@
   },
   "active": "02c359ee7f02ebd8",
   "lastOpenFiles": [
-    "WLAN/Standards/Config.md",
-    "WLAN/Standards/Theorie.md",
     "WLAN/Capsman/Theorie.md",
+    "Images/Pasted-image-20250330161204.png",
+    "WLAN/Standards/Theorie.md",
+    "WLAN/Standards/Config.md",
     "WLAN/Capsman/Config.md",
     "VPN/WireGuard/Theorie.md",
     "VPN/WireGuard/Config.md",
@@ -207,7 +207,6 @@
     "WLAN/Standards.md",
     "WLAN/Standards",
     "Routing/static Routing/Theorie.md",
-    "Images/SR1.png",
     "Adressierungen/Addressumrechnung",
     "Images"
   ]

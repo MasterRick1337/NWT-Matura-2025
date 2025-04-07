@@ -9,7 +9,7 @@ Vorteile:
 ### VLAN Header
 Ein VLAN-Tag wird in ein Ethernet-Frame eingefügt, um Pakete einem bestimmten VLAN zuzuordnen.
 
-![[Images/Vlan_header.jpg]]
+![](Images/Vlan_header.jpg)
 #### Aufbau
 - Tag Protocol Identifier (TPID)
     - 2 Byte größe
