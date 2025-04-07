@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "6c876c0c2d60fe4f",
+        "id": "97737bb1d097da66",
         "type": "tabs",
         "children": [
           {
-            "id": "02c359ee7f02ebd8",
+            "id": "84a578f3d3e1bdbe",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Switching/STP/Theorie.md",
+                "file": "Routing/static Routing/Config.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Theorie"
+              "title": "Backlinks for Config"
             }
           },
           {
@@ -155,7 +155,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -167,31 +168,31 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "02c359ee7f02ebd8",
+  "active": "84a578f3d3e1bdbe",
   "lastOpenFiles": [
-    "WLAN/Capsman/Theorie.md",
-    "Images/Pasted-image-20250330161204.png",
-    "WLAN/Standards/Theorie.md",
-    "WLAN/Standards/Config.md",
-    "WLAN/Capsman/Config.md",
-    "VPN/WireGuard/Theorie.md",
-    "VPN/WireGuard/Config.md",
-    "VPN/OpenVPN/Theorie.md",
-    "VPN/OpenVPN/Config.md",
-    "VPN/IPSEC-L2TP/Theorie.md",
-    "VPN/IPSEC-L2TP/Config.md",
-    "Switching/VLANs/Theorie.md",
     "Switching/VLANs/Config.md",
     "Switching/STP/Theorie.md",
-    "Routing/static Routing/Config.md",
+    "Switching/VLANs/Theorie.md",
     "Routing/OSPF/Theorie.md",
-    "Routing/OSPF/Config.md",
+    "Images/Pasted-image-20250330161204.png",
+    "WLAN/Standards/Theorie.md",
+    "WLAN/Capsman/Theorie.md",
+    "WLAN/Standards/Config.md",
+    "WLAN/Capsman/Config.md",
+    "VPN/OpenVPN/Theorie.md",
+    "VPN/IPSEC-L2TP/Theorie.md",
+    "Routing/static Routing/Config.md",
     "Routing/BGP/Theorie.md",
     "Routing/BGP/Config.md",
-    "Images/openvpn.png",
+    "Routing/OSPF/Config.md",
+    "VPN/WireGuard/Config.md",
     "Images/wireguardS2S.png",
+    "VPN/WireGuard/Theorie.md",
+    "VPN/OpenVPN/Config.md",
     "Images/ovpn_site2site.png",
+    "Images/openvpn.png",
     "Images/site2siteExample.drawio.png",
+    "VPN/IPSEC-L2TP/Config.md",
     "Images/site2site.drawio.png",
     "Images/roadwarrior.drawio.png",
     "VPN/WireGuard",
