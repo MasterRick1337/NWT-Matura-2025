@@ -1,4 +1,4 @@
-![[Untitled-1.png]]
+![](images/Untitled-1.png)
 ```
 /system identity
 set name=G1
