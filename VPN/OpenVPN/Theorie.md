@@ -7,4 +7,4 @@ OpenVPN is eine Open-Source-Software für virtuelle private Netzwerke (VPN), die
 
 Insgesamt ist OpenVPN eine beliebte Wahl für Einzelpersonen, Unternehmen und Organisationen, die sichere und private Kommunikationskanäle über das Internet herstellen möchten. Es wird häufig verwendet, um VPNs für den Remote-Zugriff, sichere Kommunikation zwischen Zweigstellen oder den Zugriff auf Ressourcen über das Internet auf sichere Weise einzurichten.
 
-![](Images/openvpn.png)
+![](openvpn.png)

@@ -1,4 +1,4 @@
-![](Images/Untitled.png)
+![](Untitled.png)
 ### Router 1:
 ```
 /system 

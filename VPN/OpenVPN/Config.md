@@ -1,4 +1,4 @@
-![](Images/ovpn_site2site.png)
+![](ovpn_site2site.png)
 
 #### Server
 
