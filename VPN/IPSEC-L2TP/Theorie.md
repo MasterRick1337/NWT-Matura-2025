@@ -10,10 +10,10 @@
 ### Arten von VPNs
 #### Roadwarrior VPN
 Einzelne Hosts verbinden sich in ein Netzwerk
-![[roadwarrior.drawio.png]]
+![](roadwarrior.drawio.png)
 #### Site-to-Site VPN
 Verbindet zwei oder mehrere Netzwerke durch das Internet miteinander
-![[site2site.drawio.png]]
+![](site2site.drawio.png)
 
 ### L2TP/IPSec
 #### Übersicht
