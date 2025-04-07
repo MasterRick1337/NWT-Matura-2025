@@ -31,6 +31,8 @@ deaktivierte Verbindung aktivieren und somit die Netzwerkverfügbarkeit verbesse
 - Die Wahl fällt auf den Switch mit der niedrigsten Bridge-ID als Root-Bridge.
 - Nicht-Root-Switches wählen ihren Root-Port basierend auf den Portkosten, die von der Portgeschwindigkeit abhängen.
 
+##### Root Path
+
 #### Wahl des blockierten Ports
 1. **Root-Bridge wählen:** Der Switch mit der niedrigsten Bridge-ID wird als "König der Switches" gewählt.
 2. **Forwarding-Zustand für Root-Bridge-Schnittstellen einstellen.**

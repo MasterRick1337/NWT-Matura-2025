@@ -1,4 +1,4 @@
-![[vlanConf.png]]
+![[Images/vlanConf.png]]
 
 In diesem Beispiel werden wir zwei Netze anlegen:
 

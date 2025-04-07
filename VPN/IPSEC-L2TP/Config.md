@@ -1,4 +1,4 @@
-![[site2siteExample.drawio.png]]
+![[Images/site2siteExample.drawio.png]]
 
 **VPN-Server**
 ```

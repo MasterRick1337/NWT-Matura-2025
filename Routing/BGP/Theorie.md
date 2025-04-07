@@ -7,7 +7,7 @@ Ein **Autonomes System (AS)** ist ein unabhängig verwaltetes Netzwerk oder eine
 | ------------------- | ---------------------------------------------- | ------------------- | --------------------------------------- |
 | iBGP (Internal BGP) | Routing innerhalb eines autonomen Systems (AS) | Kein Hop-Limit      | Setzt bevorzugte externe eBGP-Routen um |
 | eBGP (External BGP) | Routing zwischen autonomen Systemen (AS)       | Hop-Limit = 1 (TTL) | Sucht den besten Weg ins Internet       |
-#### eBGP (External BGP)
+### eBGP (External BGP)
 - Wird zwischen **verschiedenen AS** verwendet.
 - Nutzt **AS-Path** als wichtigstes Attribut für die Routenwahl.
 - Hat standardmäßig ein **TTL (Time-to-Live) von 1**, was bedeutet, dass die Nachbarn **direkt verbunden** sein müssen (kann mit `ebgp-multihop` erweitert werden).
