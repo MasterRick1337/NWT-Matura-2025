@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Routing/BGP/Config.md",
+                "file": "Routing/OSPF/Theorie.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Config"
+              "title": "Theorie"
             }
           }
         ]
@@ -171,8 +171,23 @@
   "active": "02c359ee7f02ebd8",
   "lastOpenFiles": [
     "Routing/OSPF/Config.md",
-    "Routing/BGP/Theorie.md",
+    "Routing/static Routing/Config.md",
     "Routing/BGP/Config.md",
+    "Routing/BGP/Theorie.md",
+    "Switching/STP/Theorie.md",
+    "Switching/VLANs/Theorie.md",
+    "Switching/VLANs/Config.md",
+    "WLAN/Standards/Theorie.md",
+    "WLAN/Standards/Config.md",
+    "WLAN/Capsman/Theorie.md",
+    "WLAN/Capsman/Config.md",
+    "VPN/WireGuard/Theorie.md",
+    "VPN/WireGuard/Config.md",
+    "VPN/OpenVPN/Theorie.md",
+    "VPN/OpenVPN/Config.md",
+    "VPN/IPSEC-L2TP/Theorie.md",
+    "VPN/IPSEC-L2TP/Config.md",
+    "Routing/OSPF/Theorie.md",
     "images/Pasted-image-20250330161204.png",
     "images/wireguardS2S.png",
     "images/Vlan_header.jpg",
@@ -184,31 +199,16 @@
     "images/site2site.drawio.png",
     "images/roadwarrior.drawio.png",
     "images",
-    "VPN/WireGuard/Config.md",
-    "VPN/WireGuard/Theorie.md",
-    "VPN/OpenVPN/Config.md",
-    "VPN/OpenVPN/Theorie.md",
-    "VPN/IPSEC-L2TP/Config.md",
-    "VPN/IPSEC-L2TP/Theorie.md",
-    "Switching/STP/Theorie.md",
-    "Switching/VLANs/Theorie.md",
     "VPN/WireGuard",
     "VPN/OpenVPN",
     "VPN/IPSEC-L2TP",
-    "Switching/VLANs/Config.md",
     "Switching/STP",
-    "WLAN/Capsman/Config.md",
     "Switching/VLANs",
-    "WLAN/Capsman/Theorie.md",
-    "WLAN/Standards/Theorie.md",
-    "WLAN/Standards/Config.md",
-    "Routing/static Routing/Config.md",
     "Capsman.md",
     "WLAN/Capsman",
     "WLAN/Standards.md",
     "WLAN/Standards",
     "Routing/static Routing/Theorie.md",
-    "Routing/OSPF/Theorie.md",
     "Adressierungen/Addressumrechnung",
     "Images"
   ]

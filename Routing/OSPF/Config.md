@@ -1,4 +1,4 @@
-![](../../Images/Untitled.png)
+![](../../images/Untitled.png)
 
 ### Router 1:
 

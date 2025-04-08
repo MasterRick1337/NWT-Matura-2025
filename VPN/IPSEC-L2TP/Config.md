@@ -1,4 +1,4 @@
-![](site2siteExample.drawio.png)
+![](../../images/site2siteExample.drawio.png)
 
 **VPN-Server**
 ```

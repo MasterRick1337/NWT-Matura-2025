@@ -1,4 +1,4 @@
-![](SR1.png)
+![](../../images/SR1.png)
 Router 1:
 ```
 /ip address 
