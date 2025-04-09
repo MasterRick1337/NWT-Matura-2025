@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Routing/OSPF/Theorie.md",
+                "file": "Routing/BGP.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Theorie"
+              "title": "BGP"
             }
           }
         ]
@@ -170,24 +170,32 @@
   },
   "active": "02c359ee7f02ebd8",
   "lastOpenFiles": [
-    "Routing/OSPF/Config.md",
-    "Routing/static Routing/Config.md",
-    "Routing/BGP/Config.md",
-    "Routing/BGP/Theorie.md",
-    "Switching/STP/Theorie.md",
-    "Switching/VLANs/Theorie.md",
-    "Switching/VLANs/Config.md",
+    "Routing/OSPF.md",
+    "Routing/Static Routing.md",
+    "Switching/VLANs.md",
+    "Switching/STP.md",
+    "VPN/IPSEC-L2TP.md",
+    "VPN/OpenVPN.md",
+    "VPN/WireGuard.md",
+    "WLAN/Capsman.md",
+    "WLAN/Standards.md",
     "WLAN/Standards/Theorie.md",
     "WLAN/Standards/Config.md",
-    "WLAN/Capsman/Theorie.md",
     "WLAN/Capsman/Config.md",
-    "VPN/WireGuard/Theorie.md",
+    "WLAN/Capsman/Theorie.md",
     "VPN/WireGuard/Config.md",
-    "VPN/OpenVPN/Theorie.md",
+    "VPN/WireGuard/Theorie.md",
     "VPN/OpenVPN/Config.md",
-    "VPN/IPSEC-L2TP/Theorie.md",
+    "VPN/OpenVPN/Theorie.md",
     "VPN/IPSEC-L2TP/Config.md",
+    "VPN/IPSEC-L2TP/Theorie.md",
+    "Switching/VLANs/Config.md",
+    "Switching/VLANs/Theorie.md",
+    "Switching/STP/Theorie.md",
+    "Routing/static Routing/Config.md",
+    "Routing/OSPF/Config.md",
     "Routing/OSPF/Theorie.md",
+    "Routing/BGP.md",
     "images/Pasted-image-20250330161204.png",
     "images/wireguardS2S.png",
     "images/Vlan_header.jpg",
@@ -204,11 +212,8 @@
     "VPN/IPSEC-L2TP",
     "Switching/STP",
     "Switching/VLANs",
-    "Capsman.md",
     "WLAN/Capsman",
-    "WLAN/Standards.md",
     "WLAN/Standards",
-    "Routing/static Routing/Theorie.md",
     "Adressierungen/Addressumrechnung",
     "Images"
   ]
