@@ -1,46 +1,52 @@
 # Theorie
-OSPF (Open Shortest Path First) ist ein dynamisches Routing-Protokoll, das das **Link-State-Routing-Verfahren** verwendet.
-## Grundprinzip
-- Es nutzt den **Dijkstra-Algorithmus** (Shortest Path First, SPF), um die kürzesten Pfade zu berechnen.
-- Es nutzt **Multicast (224.0.0.5 und 224.0.0.6)** für die Kommunikation zwischen Routern.
-## Netzwerkaufbau
-- OSPF organisiert Netzwerke in **Areas**, um die Routing-Tabelle zu optimieren.
-- **Area 0 (Backbone-Area)** ist die Hauptarea, zu der alle anderen Areas verbunden sein müssen.
+OSPF ([Wikipedia](https://de.wikipedia.org/wiki/Open_Shortest_Path_First)/[MikroTik Docs](https://help.mikrotik.com/docs/spaces/ROS/pages/9863229/OSPF#OSPF-Overview)) ist ein dynamisches Routing-Protokoll, das verwendet wird, um die Routing-Informationen zu entdecken und aufrechtzuerhalten, die erforderlich sind, um Datenpakete effizient über das Netzwerk zu leiten. Es ist eines der weitesten verbreiteten Interior Gateway Protokolle (IGPs) in großen Unternehmensnetzwerken.
+## Wichtiges zu OSPF
+- Link-State-Protokoll: OSPF ist ein Link-State-Routing-Protokoll, was bedeutet, dass Router Informationen über die Erreichbarkeit ihrer Nachbarn austauschen. Jeder Router erstellt eine Karte der Topologie des Netzwerks, die als Link-State-Datenbank (LSDB) bezeichnet wird und verwendet wird, um den kürzesten Weg zu jedem Ziel zu berechnen.
 
-- Routing Tabelle enthält Regeln darüber, wie Datenpakete von einem Netzwerk zum anderen weitergeleitet werden. Jeder Router oder Computer mit mehreren Netzwerkschnittstellen nutzt eine Routing-Tabelle, um zu entscheiden, wohin ein Paket gesendet werden soll. Areas sind dafür da um die Routing Tabelle kleiner und Router-ressourcensparender zu halten.
-#### Link-State Database (LSDB)
-- Die **LSDB** ist eine **Datenbank**, in der jeder OSPF-Router den gesamten Netzwerkzustand speichert.
-- Enthält alle **Link-State Advertisements (LSAs)** der Area.
-- **Jeder Router hat eine identische LSDB innerhalb einer Area** (dank Synchronisation).
-- Wird zur Berechnung der kürzesten Pfade (mit dem **Dijkstra-Algorithmus**) genutzt.
-#### Link-State Advertisement (LSA)
-- Ein **LSA** ist eine _Nachricht_, die Netzwerkinformationen (z. B. Router, Links, Subnetze) beschreibt.
-- Es gibt **verschiedene LSA-Typen** (z. B. Typ 1 für Router, Typ 2 für Netzwerke, Typ 5 für externe Routen).
-- Werden zwischen Routern ausgetauscht, um die LSDB aktuell zu halten.
-## Pakettypen - Ablauf
-1. **Hello-Paket**
-    - **Zweck:** Nachbarschaftsbildung (_Neighbor Discovery_).
-    - Enthält Infos wie Router-ID, Hello-Intervalle und Area-ID.
-    - Wird regelmäßig an **Multicast-Adresse `224.0.0.5`** gesendet.
-    - **Antwort:** Wenn Parameter übereinstimmen, wird eine OSPF-Nachbarschaft (_Adjacency_) aufgebaut.
-        
-2. **Database Description (DBD)**
-    - **Zweck:** Austausch einer **Zusammenfassung der LSDB** (Liste aller LSAs).
-    - Wird während der **initialen Synchronisation** gesendet.
-    - Hilft festzustellen, welche LSAs fehlen oder veraltet sind.
-        
-3. **Link-State Request (LSR)**
-    - **Zweck:** Fordert **fehlende oder aktuellere LSAs** an.
-    - Ein Router vergleicht die DBD mit seiner eigenen LSDB und fordert fehlende Infos an.
-        
-4. **Link-State Update (LSU)**
-    - **Zweck:** Überträgt die **vollständigen LSA-Informationen**.
-    - Enthält ein oder mehrere LSAs, um die LSDB zu aktualisieren.
-    - Wird auch bei Änderungen im Netzwerk (z. B. Link-Down) gesendet.
-        
-5. **Link-State Acknowledgment (LSAck)**
-    - **Zweck:** Bestätigt den **Erhalt von LSUs**.
-    - Stellt sicher, dass LSAs zuverlässig übertragen werden.
+- Hierarchisches Design: OSPF-Netzwerke können in Bereiche (Areas) organisiert werden, die logische Gruppierungen von Routern und Netzwerken darstellen. Diese hierarchische Design hilft dabei, die Größe des LSDB und die Menge an Routing Informationen, die ausgetauscht werden müssen, zu reduzieren.
+
+- Kostenbasierte Metrik: OSPF verwendet eine kostenbasierte Metrik, um den besten Pfad zu einem Ziel zu bestimmen. Die Kosten einer Route werden auf Basis der Bandbreite der Verbindung berechnet. Pfade mit niedrigen Kosten werden gegenüber Pfaden mit höheren Kosten bevorzugt.
+
+- Schnelle Konvergenz: OSPF unterstützt eine schnelle Konvergenz, wodurch Router schnell auf Änderungen des Netzwerks reagieren können. Wenn eine Verbindung oder ein Router ausfällt, können OSPF-Router innerhalb von Sekunden Routen neu berechnen und ihre Routing-Tabellen aktualisieren.
+## OSPF-Komponenten
+- Router: Ein Router auf dem die Routing-Informationen mittels OSPF-Paketen ausgetauscht werden.
+
+- Hello-Protokoll: OSPF-Router verwenden das Hello-Protokoll, um Nachbarn zu entdecken und Verbindungen mit benachbarten Routern herzustellen. Diese Pakete werden in periodischen Abständen geschickt.
+
+- Dijkstra-Algorithmus: Unter Verwendung des Dijkstra-Algorithmus wird der kürzeste Pfad zwischen allen Routern berechnet. Das führt zu einer Routing-Tabelle, die den besten Weg zu jedem Netzwerk enthält.
+
+- Master Router: Es wird ein Master/Main Router durch die höchste gesetzte Priorität gewählt (falls keine Prioritäten gesetzt sind wird die Router-ID verwendet), über diesen werden die Datenbanken (LSDB) syncronisiert
+## Areas
+- OSPF organisiert Netzwerke in **Areas**, um die Routing-Tabelle zu optimieren.
+- - Routing Tabelle enthält Regeln darüber, wie Datenpakete von einem Netzwerk zum anderen weitergeleitet werden. Jeder Router oder Computer mit mehreren Netzwerkschnittstellen nutzt eine Routing-Tabelle, um zu entscheiden, wohin ein Paket gesendet werden soll. Areas sind dafür da um die Routing Tabelle kleiner und Router-ressourcensparender zu halten.
+
+- **Backbone**
+  - Areas müssen mit Backbone gekoppelt sein
+  - Oberste Area (ID 0 )
+  - Verbindungsbrücke
+- **Regular Area**
+  - Alle anderen Areas
+  - ID von 1 bis 2 32 − 1
+- **Transit**  
+  - Überbrückungsarea
+  - ist nicht an Backbone verbunden
+  - Verkehr wird zwischen mit Transit verbunden Areas direkt vermittelt (geht nicht über Backbone)
+## Merkmale 
+- OSPF garantiert ein schleifenfreies Routing im Gegensatz zu RIP
+- Es nutzt das Hello-Protokoll für die Überwachung der Nachbarn
+- Es unterstützt VLSM, sowie CIDR
+- OSPF ist für große, skalierbare Netze gut geeignet
+- Das Area-Konzept vereinfacht die Kommunikation und Wartung
+## Pakettypen
+- Hello packet --> Neighbour Discovery und gegenüberstehende Verbindungen aufbauen
+
+- Database Description (DD) --> Datenbank syncronisation zwischen Routern, wird nach Verbindungsaufbau gesendet
+
+- Link-State Request (LSR) --> Neue Datenbankteile werden abgefragt, veraltete Einträge werden nach DD ermittel
+
+- Link-State Update (LSU) --> Trägt neue gefragte Link-State Einträge
+
+- Link-State Acknowledgment (LSack) --> Bestätigt angekommene Pakete, so kommt es zu stabilen Datenaustausch
 
 **Beispiel:**
 - Router A sendet ein **Hello**, Router B antwortet.
@@ -49,64 +55,65 @@ OSPF (Open Shortest Path First) ist ein dynamisches Routing-Protokoll, das das *
 - Router A sendet die LSAs per **LSU**.
 - Router B bestätigt mit **LSAck**.
 - Nun haben beide die gleiche LSDB.
-## OSPF-Typen (**Link-State Advertisement**-Typen)
-OSPF verwendet verschiedene LSA-Typen, um Routing-Informationen im Netzwerk auszutauschen. Diese Typen definieren, welche Informationen verteilt werden und wie die Netzwerkstruktur aussieht.
-
-1. **LSA Typ 1 (Router-LSA)**
-    
-    - Beschreibt die Links und Interfaces eines Routers innerhalb einer **Area**.
-    - Wird von jedem OSPF-Router erzeugt und nur innerhalb der eigenen Area verbreitet.
-        
-2. **LSA Typ 2 (Network-LSA)**
-    
-    - Wird vom **Designated Router (DR)** in einem Broadcast-/Multi-Access-Netzwerk (z. B. Ethernet) erzeugt.
-    - Listet alle Router im selben Netzwerksegment auf.
-        
-3. **LSA Typ 3 (Summary-LSA)**
-    
-    - Wird von **Area Border Routern (ABR)** erzeugt, um Routen aus einer Area in andere Areas zu propagieren (Inter-Area-Routing).
-    - Fasst Netzwerke zusammen, um die Routing-Tabelle zu optimieren.
-        
-4. **LSA Typ 4 (ASBR-Summary-LSA)**
-    
-    - Wird von einem **ABR** erzeugt, um den Standort eines **Autonomous System Boundary Router (ASBR)** bekannt zu machen.
-    - Hilft bei der Weiterleitung zu externen Routen (z. B. aus BGP oder statischen Routen).
-        
-5. **LSA Typ 5 (AS-External-LSA)**
-    
-    - Wird von einem **ASBR** erzeugt, um **externe Routen** (z. B. aus BGP oder statischen Routen) in die OSPF-Domain einzubringen.
-    - Wird im gesamten OSPF-AS verbreitet.
-        
-6. **LSA Typ 7 (NSSA-LSA, nur in NSSA Areas)**
-    
-    - Ähnlich wie Typ 5, aber für **Not-So-Stubby Areas (NSSA)**, die keine externen Routen empfangen dürfen.
-    - Wird von einem ASBR in einer NSSA erzeugt und von einem ABR in Typ 5 umgewandelt.
-
-- **LSA 1 & 2** → Intra-Area-Routing (innerhalb einer Area)
-- **LSA 3 & 4** → Inter-Area-Routing (zwischen Areas)
-- **LSA 5 & 7** → Externe Routen (z. B. aus BGP)
 
 # Config
-![](../images/Untitled.png)
-### Router 1:
+![](../images/ospf.png)
+### Router A
+#### Bridge
 ```
-/system
-identity set name=Router1
-
-/ip address
-add address=10.0.0.1/30 interface=ether1 network=10.0.0.0
-add address=10.0.0.6/30 interface=ether2 network=10.0.0.4
-add address=192.168.10.1/24 interface=ether5 network=192.168.10.0
-
+/interface bridge
+  add name=bridge1
+/interface bridge port
+  add bridge=bridge1 interface=ether2
+  add bridge=bridge1 interface=ether3
+  add bridge=bridge1 interface=ether4
+  add bridge=bridge1 interface=ether5
+```
+#### OSPF Konfiguration
+```
 /routing ospf instance
-add disabled=no name=OSPFInst1 redistribute=connected router-id=10.0.0.1
-
+  add disabled=no name=ospf1 redistribute=connected,ospf,bgp
 /routing ospf area
-add disabled=no instance=OSPFInst1 name=backbone
-
-/routing ospf interface-template
-add area=backbone cost=15 disabled=no interfaces=ether1
-add area=backbone cost=15 disabled=no interfaces=ether2
+  add disabled=no instance=ospf1 name=area1
 ```
+#### Interface IP Addressing
+```
+/ip address
+  add address=10.0.0.1/24 interface=ether1 network=10.0.0.0
+  add address=192.168.0.1/24 interface=bridge1 network=192.168.0.0
+```
+#### OSPF Interface Template
+```
+/routing ospf interface-template
+  add disabled=no interface=ether1 area=area1 cost=10
+```
+### Router B
+#### Bridge
+```
+/interface bridge
+  add name=bridge2
 
-Hier sind alle Router in der Backbone-Area (Area-0) da sie alle wichtig sind (eine Verbindung zu einem PC/Internet haben).
+/interface bridge port
+  add bridge=bridge2 interface=ether2
+  add bridge=bridge2 interface=ether3
+  add bridge=bridge2 interface=ether4
+  add bridge=bridge2 interface=ether5
+```
+#### OSPF Konfiguration
+```
+/routing ospf instance
+  add disabled=no name=ospf2 redistribute=connected,ospf,bgp
+/routing ospf area
+  add disabled=no instance=ospf2 name=area1
+```
+#### Interface IP Addressing
+```
+/ip address
+  add address=10.0.0.2/24 interface=ether1 network=10.0.0.0
+  add address=192.168.0.2/24 interface=bridge2 network=192.168.1.0
+```
+#### OSPF Interface Template
+```
+/routing ospf interface-template
+  add disabled=no interface=ether1 area=area1 cost=10
+```

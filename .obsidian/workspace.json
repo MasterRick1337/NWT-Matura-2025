@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Routing/BGP.md",
+                "file": "WLAN/Wifi.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "BGP"
+              "title": "Wifi"
             }
           }
         ]
@@ -170,15 +170,20 @@
   },
   "active": "02c359ee7f02ebd8",
   "lastOpenFiles": [
+    "readme.md",
+    "WLAN/Wifi.md",
+    "images/image1.png",
+    "WLAN/Capsman.md",
+    "images/image.png",
     "Routing/OSPF.md",
+    "images/ospf.png",
+    "VPN/OpenVPN.md",
+    "Routing/BGP.md",
     "Routing/Static Routing.md",
     "Switching/VLANs.md",
     "Switching/STP.md",
     "VPN/IPSEC-L2TP.md",
-    "VPN/OpenVPN.md",
     "VPN/WireGuard.md",
-    "WLAN/Capsman.md",
-    "WLAN/Standards.md",
     "WLAN/Standards/Theorie.md",
     "WLAN/Standards/Config.md",
     "WLAN/Capsman/Config.md",
@@ -194,8 +199,6 @@
     "Switching/STP/Theorie.md",
     "Routing/static Routing/Config.md",
     "Routing/OSPF/Config.md",
-    "Routing/OSPF/Theorie.md",
-    "Routing/BGP.md",
     "images/Pasted-image-20250330161204.png",
     "images/wireguardS2S.png",
     "images/Vlan_header.jpg",
@@ -203,9 +206,6 @@
     "images/vlanConf.png",
     "images/Untitled-1.png",
     "images/SR1.png",
-    "images/site2siteExample.drawio.png",
-    "images/site2site.drawio.png",
-    "images/roadwarrior.drawio.png",
     "images",
     "VPN/WireGuard",
     "VPN/OpenVPN",

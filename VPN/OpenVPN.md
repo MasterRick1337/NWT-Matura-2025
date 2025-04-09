@@ -1,15 +1,26 @@
 # Theorie
-OpenVPN is eine Open-Source-Software für virtuelle private Netzwerke (VPN), die eine sichere Kommunikation über das Internet ermöglicht, indem sie eine private und verschlüsselte Verbindung zwischen zwei Punkten herstellt. Es wird weitgehend für die Einrichtung von sicheren Punkt-zu-Punkt- oder Standort-zu-Standort-Verbindungen in gerouteten oder gebrückten Konfigurationen sowie für Remote-Zugriffseinrichtungen verwendet.
+**OpenVPN** ist eine Open-Source-Software zur Einrichtung von **virtuellen privaten Netzwerken (VPNs)**. Sie ermöglicht eine **sichere, verschlüsselte Verbindung** zwischen zwei oder mehreren Netzwerkknoten – ideal für den privaten Gebrauch, Unternehmen oder Organisationen, die Daten über das Internet sicher übertragen möchten.
+## Was ist ein VPN überhaupt?
+Ein VPN (Virtual Private Network) ist eine geschützte Netzwerkverbindung über ein öffentliches Netzwerk wie das Internet. Dabei wird ein "Tunnel" erstellt, durch den Daten verschlüsselt übertragen werden – so können z. B. Außendienstmitarbeiter sicher auf das Firmennetz zugreifen oder geografische Einschränkungen umgangen werden.
 ## Funktionen und Aspekte von OpenVPN:
-1. **Sicherheit:** OpenVPN verwendet ein benutzerdefiniertes Sicherheitsprotokoll, das OpenSSL zur Verschlüsselung nutzt. Es unterstützt verschiedene Verschlüsselungsalgorithmen und Authentifizierungsmethoden, was ein hohes Maß an Sicherheit gewährleistet.
-2. **Plattformübergreifend:** OpenVPN ist mit (fast) allen Betriebssystemen kompatibel, zB.: Windows, macOS, Linux, iOS und Android.
-3. **Skalierbarkeit:** OpenVPN kann für verschiedene Szenarien konfiguriert werden, von kleinen persönlichen VPNs bis hin zu unternehmensweiten Implementierungen. Es unterstützt sowohl Site-to-Site-VPNs als auch Remote-Zugriffs-VPNs.
-4. **SSL/TLS für den Schlüsselaustausch:** OpenVPN verwendet SSL/TLS-Protokolle für den Schlüsselaustausch und fügt den VPN-Verbindungen eine zusätzliche Sicherheitsebene hinzu.
-
-Insgesamt ist OpenVPN eine beliebte Wahl für Einzelpersonen, Unternehmen und Organisationen, die sichere und private Kommunikationskanäle über das Internet herstellen möchten. Es wird häufig verwendet, um VPNs für den Remote-Zugriff, sichere Kommunikation zwischen Zweigstellen oder den Zugriff auf Ressourcen über das Internet auf sichere Weise einzurichten.
-
+1. **Sicherheit:**
+   OpenVPN verwendet das **OpenSSL-Toolkit** für starke **Verschlüsselung (z. B. AES-256)** und **Authentifizierung** (z. B. mit Zertifikaten oder Benutzernamen/Passwort). Es gilt als eines der sichersten VPN-Protokolle überhaupt.
+2. **Plattformunabhängig:**  
+   Verfügbar für **Windows, macOS, Linux, iOS, Android** – auch Router (z. B. MikroTik) können OpenVPN einsetzen.
+3. **Flexible Konfiguration:**
+   - **Site-to-Site:** Verbindet z. B. zwei Standorte (Filialen) miteinander.
+   - **Remote Access:** Einzelne Clients (z. B. Mitarbeiter) verbinden sich von unterwegs aus mit dem Firmennetzwerk.
+4. **SSL/TLS-Verschlüsselung:**  
+   Der Schlüsselaustausch erfolgt über **SSL/TLS**, wodurch Abhörsicherheit und Integrität gewährleistet werden.
+5. **Firewall-freundlich:**  
+   OpenVPN nutzt wahlweise **UDP oder TCP** und läuft auf Port **1194** (Standard), lässt sich aber auch auf Port 443 umstellen, um Firewalls zu umgehen.
+### So funktioniert OpenVPN
 ![](../images/openvpn.png)
-
+1. **Dein Gerät** verbindet sich mit einem **VPN-Client**.
+2. Der VPN-Client verschlüsselt die Daten mithilfe sicherer Protokolle.
+3. Diese verschlüsselten Daten werden durch einen **VPN-Tunnel** gesendet – dadurch entsteht **mehr Privatsphäre und Sicherheit**.
+4. Der **VPN-Server** empfängt die Daten, entschlüsselt sie und leitet sie ins Internet weiter. Dabei wird deine IP-Adresse verborgen.
+5. **Wer wird ausgesperrt?** Werbeunternehmen, Hacker und staatliche Überwachung sehen nur verschlüsselte Daten.
 # Config
 ![](../images/ovpn_site2site.png)
 ## Server
