@@ -58,3 +58,59 @@ STP ähnelt dem Kruskal Algorithmus ist aber nicht genau der, da wir nicht immer
 - Vermeidung von Single Points of Failure
 - Der Kruskalalgorithmus berücksichtigt nicht die Geschwindigkeiten der Leitung
 
+## **Nachteile von STP**
+- **Konvergenzzeit**: STP benötigt 30 bis 50 Sekunden für die Konvergenz, um das Netzwerk nach Änderungen zu stabilisieren. Dies kann in großen Netzwerken spürbare Verzögerungen verursachen.
+
+---
+
+# **Unterschiede zwischen STP und RSTP**
+
+**Rapid Spanning Tree Protocol (RSTP, IEEE 802.1w)** ist eine Weiterentwicklung von STP und bietet wesentliche Verbesserungen.
+
+## **Schnellere Konvergenz**
+- **RSTP** erreicht eine deutlich schnellere Konvergenz (in der Regel innerhalb von Sekunden), während **STP** 30-50 Sekunden benötigt. Dies wird durch den neuen Zustand "Discarding" erreicht, der den Übergang zu "Forwarding" beschleunigt, indem die Zustände "Blocking", "Listening" und "Learning" zusammengefasst werden.
+
+## **BPDU-Handling**
+- **RSTP** sendet BPDUs alle 2 Sekunden, unabhängig von eingehenden BPDUs, um Änderungen schneller zu erkennen.
+- **STP** sendet BPDUs nur basierend auf den BPDUs der Root-Bridge und wartet darauf, dass andere Switches BPDUs senden.
+
+## **Kompatibilität**
+- **RSTP** ist vollständig rückwärtskompatibel zu STP. Es arbeitet mit STP-Switches zusammen, indem es sich auf den älteren STP-Modus zurücksetzt, wenn es mit einem STP-Switch verbunden ist.
+
+## **Edge Ports**
+- **RSTP** erkennt automatisch Edge Ports (Ports, die mit Endgeräten verbunden sind) und versetzt diese sofort in den Forwarding-Zustand, ohne auf die normalen Verzögerungsprozesse von STP warten zu müssen.
+
+---
+
+# **Beispiel**
+
+
+Ein Netzwerk mit 3 Switches soll konfiguriert werden. Bestimme die Root-Bridge und konfiguriere die Ports der Switches entsprechend.
+
+![](../images/STP-Network-Bsp.png)
+
+**Schritte:**
+
+1. **Bridge-ID bestimmen**: Die Bridge-ID setzt sich aus der Priorität und der MAC-Adresse zusammen. Die Priorität ist standardmäßig 32768, die MAC-Adresse ist die Basis-MAC-Adresse des Switches.
+   - Switch 1: Bridge-ID = 32768 + MAC-Adresse
+   - Switch 2: Bridge-ID = 32768 + MAC-Adresse
+   - Switch 3: Bridge-ID = 32768 + MAC-Adresse
+
+**Root-Bridge bestimmen**: Die Root Bridge ist der Switch mit der niedrigsten Bridge-ID.
+Die Bridge-ID des Switch 1 ist die niedrigste, daher ist Switch 1 die Root-Bridge.
+
+![](../images/STP-Network-Bsp-part2.png)
+
+2. **Ports konfigurieren**:
+   - **Switch 1**:
+     - Port 1: Root-Port (Forwarding)
+     - Port 2: Blocked Port (Blocking)
+   - **Switch 2**:
+     - Port 1: Root-Port (Forwarding)
+     - Port 2: Designated Port (Forwarding)
+   - **Switch 3**:
+     - Port 1: Designated Port (Forwarding)
+     - Port 2: Designated Port (Forwarding)
+
+![](../images/STP-Network-Bsp-part3.png)
+

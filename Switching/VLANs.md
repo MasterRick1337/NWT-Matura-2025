@@ -6,6 +6,13 @@ Vorteile:
 - Bessere Netzwerkstruktur
 - **Reduzierter Broadcast-Traffic**
   - Entlastet das Netzwerk und verbessert die Leistung
+
+### Beschreibung
+
+VLANs, oder virtuelle lokale Netzwerke, sind eine Methode zur Segmentierung eines physischen Netzwerks in mehrere logische Netzwerke. 
+
+Dies ermöglicht es, den Datenverkehr innerhalb eines Netzwerks zu organisieren und zu steuern, indem Geräte in unterschiedliche VLANs gruppiert werden. Jedes VLAN agiert wie ein eigenständiges Netzwerk.
+
 ## VLAN Header
 Ein VLAN-Tag wird in ein Ethernet-Frame eingefügt, um Pakete einem bestimmten VLAN zuzuordnen.
 
