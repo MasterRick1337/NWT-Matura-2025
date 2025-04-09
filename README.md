@@ -1,4 +1,4 @@
-*List of topics that either need to be created or improved:**
+*List of topics that either need to be created or improved:*
 
 **Routing**
 - Static Routing
