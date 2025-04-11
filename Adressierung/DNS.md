@@ -39,7 +39,7 @@ Wenn man eine Website wie `www.google.com` aufruft, erfolgt eine mehrstufige DNS
 - Falls der DNS-Resolver den Eintrag nicht im lokalen Cache hat, sendet er eine **rekursive Anfrage** an einen DNS-Server. Der Server übernimmt die vollständige Suche nach der IP-Adresse der Domain.
 ### 3. Abfrage an die Root-Nameserver
 
-- Da der DNS-Server nicht direkt weiß, welche IP-Adresse zu `google.at` gehört, sendet er eine Anfrage an einen der 13 **Root-DNS-Server** weltweit.
+- Da der DNS-Server nicht direkt weiß, welche IP-Adresse zu `google.at` gehört, sendet er eine Anfrage an einen der 13 **Root-DNS-Server** weltweit. 13 IPs aber >> 13 Server.
 ### 4. Abfrage an den TLD-Nameserver
 
 - Der DNS-Server fragt nun den **TLD-Nameserver** (z.B. für `.com`), um den zuständigen **Authoritativen Nameserver** für die Domain zu finden (z.B. für `google`).

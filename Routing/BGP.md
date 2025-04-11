@@ -19,6 +19,8 @@ Ein **Autonomes System (AS)** ist ein unabhängig verwaltetes Netzwerk oder eine
 **Problem bei iBGP:**  
 iBGP benötigt eine **vollständige Vermaschung**, da iBGP-Router untereinander keine Routen weitergeben dürfen (kein Split-Horizon für iBGP).
 
+> split horizon erklären 
+
 **Lösung:**  
 Route Reflectors (RR) reduzieren die Anzahl der iBGP-Verbindungen und erlauben eine **Hierarchie**.
 - **RR empfängt iBGP-Routen** und kann sie an andere iBGP-Router weitergeben.

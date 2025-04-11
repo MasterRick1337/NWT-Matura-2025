@@ -38,7 +38,7 @@ Eine MAC-Adresse (Media Access Control Address) ist eine eindeutige Hardware-Adr
 | **Unicast**   | 00:1A:2B:3C:4D:5E | Kommunikation mit einem bestimmten Gerät |
 | **Multicast** | 01:00:5E:…        | Gruppe von Geräten (z. B. für Streaming) |
 | **Broadcast** | FF:FF:FF:FF:FF:FF | An alle Geräte im LAN (z. B. ARP-Requests) |
-
+Bitte IP Multicast Adressenabbildung auf MAC Adressen dokumentieren!
 ## 5. MAC vs. IP-Adresse
 
 | Eigenschaft     | MAC-Adresse | IP-Adresse |

@@ -1,3 +1,6 @@
 {
-  "cssTheme": "Catppuccin"
+  "cssTheme": "Catppuccin",
+  "textFontFamily": "Arial",
+  "monospaceFontFamily": "Consolas",
+  "interfaceFontFamily": "Arial"
 }
