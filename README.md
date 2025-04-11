@@ -5,16 +5,11 @@
 
 **Switching**
 -  STP
--  VLANs
 
 **VPN**
 - IPSEC/L2TP
 - WireGuard
 
-**WLAN**
-- Capsman
-
 **Adressierungen**
 - MAC-Adressen
-- DNS
 - Adressumrechnung
