@@ -57,63 +57,25 @@ OSPF ([Wikipedia](https://de.wikipedia.org/wiki/Open_Shortest_Path_First)/[Mikro
 - Nun haben beide die gleiche LSDB.
 
 # Config
-![](../images/ospf.png)
-### Router A
-#### Bridge
-```
-/interface bridge
-  add name=bridge1
-/interface bridge port
-  add bridge=bridge1 interface=ether2
-  add bridge=bridge1 interface=ether3
-  add bridge=bridge1 interface=ether4
-  add bridge=bridge1 interface=ether5
-```
-#### OSPF Konfiguration
-```
-/routing ospf instance
-  add disabled=no name=ospf1 redistribute=connected,ospf,bgp
-/routing ospf area
-  add disabled=no instance=ospf1 name=area1
-```
-#### Interface IP Addressing
-```
-/ip address
-  add address=10.0.0.1/24 interface=ether1 network=10.0.0.0
-  add address=192.168.0.1/24 interface=bridge1 network=192.168.0.0
-```
-#### OSPF Interface Template
-```
-/routing ospf interface-template
-  add disabled=no interface=ether1 area=area1 cost=10
-```
-### Router B
-#### Bridge
-```
-/interface bridge
-  add name=bridge2
+![](../images/OSPF_bsp.png)
 
-/interface bridge port
-  add bridge=bridge2 interface=ether2
-  add bridge=bridge2 interface=ether3
-  add bridge=bridge2 interface=ether4
-  add bridge=bridge2 interface=ether5
+### Router 1
 ```
-#### OSPF Konfiguration
-```
+/system identity
+set name=R1
+
 /routing ospf instance
-  add disabled=no name=ospf2 redistribute=connected,ospf,bgp
+add disabled=no name=OSPFInst1 redistribute=connected router-id=10.0.0.1
+
 /routing ospf area
-  add disabled=no instance=ospf2 name=area1
-```
-#### Interface IP Addressing
-```
+add disabled=no instance=OSPFInst1 name=backbone
+
 /ip address
-  add address=10.0.0.2/24 interface=ether1 network=10.0.0.0
-  add address=192.168.0.2/24 interface=bridge2 network=192.168.1.0
-```
-#### OSPF Interface Template
-```
+add address=10.0.0.1/30 interface=ether1 network=10.0.0.0
+add address=10.0.0.6/30 interface=ether2 network=10.0.0.4
+add address=192.168.10.1/24 interface=ether5 network=192.168.10.0
+
 /routing ospf interface-template
-  add disabled=no interface=ether1 area=area1 cost=10
+add area=backbone cost=15 disabled=no interfaces=ether1
+add area=backbone cost=15 disabled=no interfaces=ether2
 ```

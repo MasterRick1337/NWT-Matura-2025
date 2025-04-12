@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Routing/BGP.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "BGP"
+              "title": "README"
             }
           }
         ]
@@ -170,16 +170,18 @@
   },
   "active": "02c359ee7f02ebd8",
   "lastOpenFiles": [
-    "Routing/OSPF.md",
-    "Routing/Static Routing.md",
+    "VPN/WireGuard.md",
+    "README.md",
+    "VPN/IPSEC-L2TP.md",
     "Routing/BGP.md",
+    "WLAN/Capsman.md",
+    "Routing/OSPF.md",
+    "images/OSPF_bsp.png",
+    "Routing/Static Routing.md",
     "Adressierung/MAC-Adresse.md",
     "Switching/STP.md",
-    "VPN/IPSEC-L2TP.md",
     "VPN/OpenVPN.md",
-    "WLAN/Capsman.md",
     "WLAN/Wifi.md",
-    "VPN/WireGuard.md",
     "Switching/VLANs.md",
     "Adressierung/Ipv6.md",
     "Adressierung/Ipv4.md",
@@ -190,14 +192,12 @@
     "images/Screenshot2.png",
     "images/Screenshot1.png",
     "images/IPv4-vs-IPv6.png",
-    "README.md",
     "images/CapsConfBsp.png",
     "images/STP-Network-Bsp.png",
     "images/STP-Network-Bsp-part3.png",
     "images/STP-Network-Bsp-part2.png",
     "Adressierung",
     "readme.md",
-    "images/image1.png",
     "WLAN/Standards/Theorie.md",
     "WLAN/Standards/Config.md",
     "WLAN/Capsman/Config.md",
@@ -206,7 +206,6 @@
     "VPN/WireGuard/Theorie.md",
     "VPN/OpenVPN/Config.md",
     "VPN/OpenVPN/Theorie.md",
-    "VPN/IPSEC-L2TP/Config.md",
     "images",
     "VPN/WireGuard",
     "VPN/OpenVPN",

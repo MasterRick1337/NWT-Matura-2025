@@ -8,21 +8,59 @@
 4. **Privatsphäre**: Maskiert die eigene IP-Adresse und schützt Daten vor unerwünschten Zugriffen.
 ## Arten von VPNs
 ### Roadwarrior VPN
-Einzelne Hosts verbinden sich in ein Netzwerk
+Einzelne Hosts (z. B. Laptops oder Smartphones) verbinden sich über das Internet in ein zentrales Netzwerk – typischerweise das Firmennetzwerk. 
+
+Typisches Einsatzszenario: Ein Außendienstmitarbeiter stellt über ein VPN eine sichere Verbindung zum Büro her.
 ![](../images/roadwarrior.drawio.png)
 ### Site-to-Site VPN
-Verbindet zwei oder mehrere Netzwerke durch das Internet miteinander
+Verbindet zwei oder mehrere ganze Netzwerke über das Internet miteinander. Die einzelnen Endgeräte müssen dabei nicht selbst VPN-fähig sein – der VPN-Tunnel wird auf Netzwerkebene durch die Router oder Firewalls aufgebaut.
+
+Typisches Einsatzszenario: Zwei Bürostandorte einer Firma sind über ein VPN ständig verbunden.
+
 ![](../images/site2site.drawio.png)
 ### L2TP/IPSec
 #### Übersicht
-L2TP over IPsec ist eine Kombination aus dem Sicherheitsprotokoll IPsec und dem Tunneling-Protokoll L2TP (definiert in [RFC 3193](https://datatracker.ietf.org/doc/html/rfc3193)). Dabei wird L2TP durch IPsec getunnelt. Durch diese Kombination heben sich die Schwächen beider Protokolle gegenseitig auf und es entsteht ein flexibles Tunneling-Protokoll mit höchster Sicherheit.
-#### L2TP
-L2TP, Layer 2 Tunneling Protocol (ISO/OSI Model Layer 2) ist ein Tunneling-Protokoll, das über UDP tunnelt. Aktuell verwendet man Version 3 (L2TPv3 definiert in [RFC 3931](https://datatracker.ietf.org/doc/html/rfc3931)). L2TP enthält selbst keine Verschlüsselung. Dies wird meist von einem andern Protokoll wie IPsec übernommen.
-#### IPsec
-IPsec, Internet Protocol Security (ISO/OSI Model Layer 3) ist ein Protokoll für sichere Kommunikation über unsichere IP-Netze (definiert in [RFC 2401](https://datatracker.ietf.org/doc/html/rfc2401#section-1) und ergänzt durch [RFC 4301](https://datatracker.ietf.org/doc/html/rfc4301)). Es wird durch Verschlüsselung die Vertraulichkeit sowie die Authentizität und Integrität der Paketreihenfolge gewährleistet.  
-Zum Schlüsselaustausch wird meist IKEv2 (Internet Key Exchange Version 2) verwendet.  
-Es gibt zwei Modi in denen IPsec betrieben werden kann, transport-mode und tunnel-mode. Im transport-mode werden zwei Endpunkte Point-to-Point verbunden, dementsprechend müssen nur die Nutzdaten verschlüsselt werden. Im tunnel-mode werden zwei Netzwerke miteinander verbunden daher muss das gesamte Paket verschlüsselt werden und es wird ein neuer IP-Header hinzugefügt.  
-Außerdem gibt es zwei Arten wie IPsec angewendet wird, AH (Authentication Header) und ESP (Encapsulating Security Payload). AH sorgt nur für Authentizität und Integrität (Nutzdaten im Clear-Text), ESP hingegen auch für Verschlüsselung (Nutzdaten nicht im Clear-Text).
+L2TP over IPsec ist eine verbreitete VPN-Lösung, die zwei Protokolle kombiniert:
+- **L2TP** (Layer 2 Tunneling Protocol): Zum Aufbau des Tunnels.
+- **IPsec** (Internet Protocol Security): Für die Verschlüsselung und den Schutz der Daten.
+
+Durch die Kombination dieser beiden Technologien entsteht ein sicheres und flexibles
+VPN-Protokoll, das besonders in Unternehmensumgebungen häufig verwendet wird.
+## L2TP
+
+**L2TP (Layer 2 Tunneling Protocol)** arbeitet auf Schicht 2 des ISO/OSI-Modells und
+tunnelt Datenpakete über das Internet. Es verwendet **UDP (Port 1701)** für den Transport.
+
+Eigenschaften:
+- Keine eigene Verschlüsselung.
+- Unterstützt Multiprotocol-Tunneling.
+- L2TPv3 ist die aktuelle Version (siehe [RFC 3931](https://datatracker.ietf.org/doc/html/rfc3931)).
+
+L2TP ist auf sichere Übertragungen angewiesen – deshalb wird es meist in Kombination mit IPsec genutzt.
+## IPsec
+
+**IPsec (Internet Protocol Security)** arbeitet auf Schicht 3 des ISO/OSI-Modells und sorgt für:
+- **Verschlüsselung** (Vertraulichkeit),
+- **Authentifizierung** (Sicherstellung, dass der Absender echt ist),
+- **Integrität** (Nachweis, dass Daten nicht manipuliert wurden).
+
+IPsec kann auf zwei Arten verwendet werden:
+
+- **Transport Mode**: Nur die Nutzdaten eines IP-Pakets werden verschlüsselt.
+  Wird z. B. bei Host-zu-Host-Verbindungen eingesetzt.
+
+- **Tunnel Mode**: Das gesamte IP-Paket wird in ein neues IP-Paket eingebettet
+  und vollständig verschlüsselt. Dies ist der Standardmodus für VPNs.
+
+Zusätzlich gibt es zwei Sicherheitsprotokolle:
+
+- **AH (Authentication Header)**: Authentifiziert den Absender und sichert
+  Integrität – keine Verschlüsselung!
+
+- **ESP (Encapsulating Security Payload)**: Authentifiziert und verschlüsselt
+  die Nutzdaten – Standard für VPNs.
+
+Zum Schlüsselaustausch wird in modernen Setups häufig **IKEv2** verwendet (Internet Key Exchange, Version 2).
 
 # Config
 ![](../images/site2siteExample.drawio.png)
@@ -45,3 +83,13 @@ add connect-to=193.82.200.13 disabled=no name=l2tp-client use-ipsec=required use
 add dst-address=192.168.10.0/24 gateway=l2tp-client
 ```
 
+## Vorteile von L2TP/IPsec
+
+- Hohe Kompatibilität (unterstützt von Windows, Linux, macOS, Routern).
+- Gute Sicherheit durch die Kombination von Tunneling (L2TP) und Verschlüsselung (IPsec).
+- Keine zusätzlichen Anwendungen nötig (integriert in viele Betriebssysteme).
+## Nachteile
+
+- Teilweise aufwändige Konfiguration.
+- Kann durch Firewalls oder NAT-Geräte blockiert werden (z. B. durch UDP-Portfilter).
+- Geringere Performance im Vergleich zu neueren Protokollen wie WireGuard.

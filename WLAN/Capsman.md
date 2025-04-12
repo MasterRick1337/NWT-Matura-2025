@@ -143,5 +143,32 @@ add address=192.168.60.0/24 dns-server=192.168.60.1 gateway=192.168.60.1
 set allow-remote-requests=yes
 
 /ip firewall nat
-add action=masquerade chain=srcnat out-interface=wifi1#
+add action=masquerade chain=srcnat out-interface=wifi1
+```
 
+## Switch 1
+
+```
+/system/identity/set name=Switch1
+
+/interface/bridge/add name=br
+
+/interface/bridge/port/add bridge=br interface=ether1
+/interface/bridge/port/add bridge=br interface=ether2
+/interface/bridge/port/add bridge=br interface=ether3 pvid=60
+/interface/bridge/port/add bridge=br interface=ether4
+/interface/bridge/port/add bridge=br interface=ether5
+
+/interface/bridge/vlan/add bridge=br vlan-ids=10 tagged=br,ether1,ether2
+/interface/bridge/vlan/add bridge=br vlan-ids=20 tagged=ether1,ether2
+/interface/bridge/vlan/add bridge=br vlan-ids=30 tagged=ether1,ether2
+/interface/bridge/vlan/add bridge=br vlan-ids=40 tagged=ether1,ether2
+/interface/bridge/vlan/add bridge=br vlan-ids=50 tagged=ether1,ether2
+/interface/bridge/vlan/add bridge=br vlan-ids=60 tagged=ether1,ether2 untagged=ether3
+
+/interface/vlan/add interface=br vlan-id=10 name=VLAN10
+
+/ip/dhcp-client/add interface=VLAN10 disabled=no
+
+/interface/bridge/set br vlan-filtering=yes
+```
